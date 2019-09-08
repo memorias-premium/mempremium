@@ -21,7 +21,7 @@ mongoose.connect(db,{
 
 
 // Definimos la ruta y los middlewares (funciones) que se ejecutan segun el verbo HTTP
-app.use('/api/items', require('./routes/api/items'));
+app.use('/api/usb', require('./routes/api/usb'));
 
 const port = process.env.PORT || 5000;
 
