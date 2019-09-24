@@ -9,7 +9,8 @@ const app = express();
 // Bodyparser middleware
 app.use(express.json());
 
-// Recibimos la conexion de mongoDB
+// Recibimos la conexion de mongoDB (cambiar por la base de datos local en el servidor)
+// Recordemos que la base de datos es exclusivamente para los usuarios
 const db = config.get('mongoURI');
 
 mongoose.connect(db,{ 
@@ -22,6 +23,7 @@ mongoose.connect(db,{
 
 // Definimos la ruta y los middlewares (funciones) que se ejecutan segun el verbo HTTP
 app.use('/api/usb', require('./routes/api/usb'));
+app.use('/api/musica', require('./routes/api/musica'));
 
 const port = process.env.PORT || 5000;
 
